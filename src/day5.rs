@@ -45,7 +45,7 @@ fn seat_unique_id(inp: &((i32, i32), (i32, i32))) -> i32 {
 }
 
 pub fn part1(inp: Vec<&str>) -> i32 {
-    /* */
+    /* What is the highest seat ID on a boarding pass? */
     let mut current_max = 0;
     for boarding_pass in inp {
         let seat_number = parse_boarding_pass(boarding_pass);
@@ -58,8 +58,34 @@ pub fn part1(inp: Vec<&str>) -> i32 {
     current_max
 }
 
-pub fn part2() {
-    /* */
+pub fn part2(inp: Vec<&str>) -> i32 {
+    /*
+    your seat only one NOT in input list
+    What is the ID of your seat?
+    */
+
+    // build the matrix of possible seats
+    let mut seats = vec![];
+    for column in 1..126 {  // your seat isn't at the very front or back
+        for row in 0..7 {
+            seats.push(((column, column), (row, row)))
+        }
+    }
+
+    for boarding_pass in inp {
+        let seat_number = parse_boarding_pass(boarding_pass);
+        seats.retain(|&seat| seat != seat_number);
+    }
+    // get the id of the remaining seat
+    // seat_unique_id();
+    dbg!(seats);  // eye-balled it for seats not at start or finish
+    dbg!(seat_unique_id(&((
+                         87,
+                         87,
+                     ), (
+                         0,
+                         0,
+                     ))))
 }
 
 

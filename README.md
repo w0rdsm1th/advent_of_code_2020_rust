@@ -34,4 +34,8 @@ Day 4:
 
 
 Day 5:
-- 
+https://stackoverflow.com/a/40310140/3596968
+- filtering `vec![]`: `xs.retain(|&x| x != some_x);`
+
+Day 6:
+- ran into issues with vectors of arrays of different sizes

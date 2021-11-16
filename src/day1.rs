@@ -35,8 +35,10 @@ pub fn part2(puzzle_input: Vec<i32>){
 }
 pub fn part2_recursive(puzzle_input: Vec<i32>){
     /*
+    INCOMPLETE
      - recursive call to a helper function
         pros: easily extensible beyond 2020 and 2 digits
+
      */
     for (outer_idx, number) in puzzle_input.iter().enumerate() {
         
