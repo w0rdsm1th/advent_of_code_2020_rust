@@ -39,3 +39,20 @@ https://stackoverflow.com/a/40310140/3596968
 
 Day 6:
 - ran into issues with vectors of arrays of different sizes
+
+
+Day 7:
+- regex:
+  - pair of great patterns:
+  
+    `static ref outer_bag_regex: Regex = Regex::new(r"(?P<adjective>\w[a-z]+) (?P<colour>\w[a-z]+) bags contain").unwrap();`
+  
+    `static ref inner_bag_regex: Regex = Regex::new(r"(?P<qty>\d) (?P<adjective>\w[a-z]+) (?P<colour>\w[a-z]+) bag").unwrap();`
+  - lazy static eval to prevent recompilation every loop
+  - CaptureMatches (contains meta-data abt location of match) and just Matches
+- super concise sums over ranges
+  `(1..64).fold(0u64, |r, s| r + square(s + 1))`
+
+
+Day 8:
+- 

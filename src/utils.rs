@@ -45,4 +45,12 @@ mod tests {
         input_reader('1');
     }
 
+    #[test]
+    fn test_understanding() {
+        // let tmp: Vec<&str> = "line".split("not contained").collect();
+        // dbg!(tmp);
+
+        let v: Vec<&str> = "lion::tiger::leopard".split(":: ").collect();
+        assert_eq!(v, ["lion", "tiger", "leopard"]);
+    }
 }
